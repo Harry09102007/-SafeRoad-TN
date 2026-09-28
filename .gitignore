@@ -1,0 +1,24 @@
+# Backend secrets
+backend/.env
+
+# Dependencies
+frontend/node_modules/
+backend/node_modules/
+
+# Frontend build
+frontend/dist/
+
+# Uploaded files
+backend/uploads/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
