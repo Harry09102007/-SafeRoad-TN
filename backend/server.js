@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
+import dns from "node:dns";
 
 import authRoutes from "./routes/authRoutes.js";
 import complaintRoutes from "./routes/complaintRoutes.js";
@@ -44,6 +45,9 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5000;
+
+// Use Google's DNS for MongoDB Atlas SRV lookup
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 mongoose
   .connect(process.env.MONGO_URI)
